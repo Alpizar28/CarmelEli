@@ -81,24 +81,38 @@ document.addEventListener('DOMContentLoaded', function () {
   const contactForm = document.getElementById('contactForm');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
+    contactForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      // Get form data
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-      };
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
 
-      // In a real implementation, you would send this data to a server
-      console.log('Form submitted:', formData);
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
 
-      // Show success message
-      alert('Thank you for reaching out. I will respond within 24-48 hours.');
-
-      // Reset form
-      contactForm.reset();
+        if (response.ok) {
+          submitBtn.textContent = 'Message Sent';
+          submitBtn.style.background = '#2F5D50';
+          contactForm.reset();
+          setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            submitBtn.style.background = '';
+          }, 4000);
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        submitBtn.textContent = 'Error — try again';
+        submitBtn.disabled = false;
+        setTimeout(() => { submitBtn.textContent = originalText; }, 3000);
+      }
     });
   }
 
