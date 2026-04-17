@@ -16,8 +16,13 @@ export default function Hero() {
         <source src="https://cdn.pixabay.com/video/2015/08/08/52-135731191_medium.mp4" type="video/mp4" />
       </video>
 
-      {/* Light overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-bg/30 to-bg/60" />
+      {/* Base overlay — tones video without killing it */}
+      <div className="absolute inset-0 z-10 bg-bg/45" />
+      {/* Radial vignette — darker at edges, lighter at center where content lives */}
+      <div
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 70% 70% at 50% 50%, transparent 20%, rgba(242,244,243,0.35) 100%)' }}
+      />
 
       {/* Japanese ink brush SVG decoration */}
       <svg
@@ -47,7 +52,8 @@ export default function Hero() {
 
       {/* Hero content */}
       <motion.div
-        className="relative z-20 text-center max-w-2xl px-8"
+        className="relative z-20 text-center max-w-2xl px-12 py-14 rounded-sm"
+        style={{ background: 'rgba(242,244,243,0.55)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}
         variants={stagger}
         initial="hidden"
         animate="visible"
