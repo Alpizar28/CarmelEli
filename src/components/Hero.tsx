@@ -13,7 +13,7 @@ export default function Hero() {
         loop
         playsInline
       >
-        <source src="https://cdn.pixabay.com/video/2023/04/21/158877-819998163_large.mp4" type="video/mp4" />
+        <source src="https://cdn.pixabay.com/video/2015/08/08/52-135731191_medium.mp4" type="video/mp4" />
       </video>
 
       {/* Light overlay */}
