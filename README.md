@@ -1,77 +1,58 @@
-# Carmel Eli - Emotional Therapy Website
+# Carmel Eli Website
 
-A nature-inspired, minimalist website for emotional therapy focused on conscious transformation and inner growth.
+Sitio web en React + Vite para Carmel Eli (MSW), con video de fondo, soporte de i18n y secciones de servicios terapéuticos.
 
-## 🌊 About
+## Requisitos
 
-Professional website for Carmel Eli (MSW), Clinical Social Worker specializing in:
-- Differentiation Therapy
-- Mindfulness
-- Emotion-Focused Therapy
-- Couples Work
-- Parent Coaching
+- Node.js 18+
+- npm 9+
 
-## 🎨 Design Features
+## Desarrollo local
 
-- **Flowing River Video Background** - Embodying the metaphor of natural transformation
-- **Exact Brand Palette**:
-  - Primary: `#2F5D50` (Deep river green)
-  - Accent: `#f6d982` (Soft pale yellow)
-  - Text: `#2E2E2E` (Charcoal)
-  - Light BG: `#F2F4F3` (Misty white)
+1. Instalar dependencias:
+   - `npm install`
+2. Levantar entorno local:
+   - `npm run dev`
 
-- **Professional Timeline** - Visual representation of 10+ years experience
-- **Responsive Design** - Works beautifully on all devices
-- **Smooth Animations** - Fade-ins, hover effects, and flowing transitions
+## Build para produccion
 
-## 📁 Structure
+1. Generar carpeta `dist`:
+   - `npm run build`
+2. Probar build localmente (opcional):
+   - `npm run preview`
 
-```
-Carmel/
-├── index.html          # Main HTML structure
-├── styles.css          # Complete design system
-├── script.js           # Interactive functionality
-└── README.md           # This file
-```
+## Deploy en Hostinger (Hosting compartido)
 
-## 🚀 Quick Start
+Este proyecto queda listo para deploy estatico en Hostinger.
 
-1. Clone the repository
-2. Open `index.html` in your browser
-3. No build process needed - pure HTML, CSS, and JavaScript
+### Opcion A: File Manager
 
-## 🌍 Service Areas
+1. Ejecuta `npm run build` en tu maquina.
+2. En Hostinger abre `public_html` del dominio.
+3. Borra el contenido anterior de `public_html` (si aplica).
+4. Sube todo el contenido de `dist/` dentro de `public_html`.
+5. Verifica que `index.html` quede en `public_html/index.html`.
 
-Sessions offered worldwide (excluding US and Canada), with special focus on Israelis in Costa Rica and Central America.
+### Opcion B: FTP
 
-## 📝 Content Philosophy
+1. Ejecuta `npm run build`.
+2. Conecta por FTP al dominio de Hostinger.
+3. Sincroniza el contenido de `dist/` contra `public_html/`.
 
-The website embodies "resonance, not explanation" - creating calm invitation to conscious process through:
-- Present, non-aspirational language
-- Professional warmth without corporate coldness
-- Emphasis on steady inner movement vs. forced change
+## Notas importantes para Hostinger
 
-## 🎯 Sections
+- Se configuro `base: './'` en Vite para que los assets funcionen tanto en raiz como en subcarpeta.
+- Se agrego `public/.htaccess` para compatibilidad con rutas SPA y cache basica en Apache.
+- Si cambias de dominio o carpeta, vuelve a correr `npm run build` antes de subir.
 
-1. **Home** - River video background with dual CTAs
-2. **About** - Personal intro, professional timeline, education, and development
-3. **Therapy Methods** - 3 core approaches
-4. **Services** - Individual, Couples, and Parent Coaching
-5. **Credentials** - Professional highlights and supported areas
-6. **Blog** - Reflections on therapeutic work
-7. **Contact** - Gentle invitation with geographical note
+## Estructura principal
 
-## 💻 Technologies
+- `src/` componentes y logica de la app
+- `public/` assets estaticos y `.htaccess`
+- `dist/` build final listo para subir a Hostinger
 
-- HTML5 (Semantic markup)
-- CSS3 (Custom properties, animations, grid/flexbox)
-- Vanilla JavaScript (No frameworks)
-- Google Fonts (Inter)
+## Scripts
 
-## 📄 License
-
-© 2026 Carmel Eli (MSW). All rights reserved.
-
----
-
-*Conscious transformation, one session at a time.*
+- `npm run dev` inicia Vite en desarrollo
+- `npm run build` compila TypeScript y genera `dist`
+- `npm run preview` sirve el build localmente

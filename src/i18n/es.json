@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "methods": "Métodos",
+    "services": "Servicios",
+    "collaborations": "Colaboraciones",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "bookSession": "Reservar sesión"
+  },
+  "hero": {
+    "tagline": "Terapia emocional · Online en todo el mundo",
+    "title": "Carmel Eli",
+    "subtitle": "MSW · Trabajadora Social Clínica",
+    "quote": "Un espacio tranquilo para la presencia, la responsabilidad\ny el movimiento interior significativo",
+    "cta": "Comenzar el camino",
+    "ctaLearn": "Saber más",
+    "scroll": "Desplazar"
+  },
+  "about": {
+    "label": "Sobre mí",
+    "heading": "Trabajadora Social Clínica,\nmás de 10 años de experiencia",
+    "p1": "Entiendo la terapia como una práctica viva y continua. Mi trabajo se centra en acompañar a las personas en el desarrollo de la consciencia, la responsabilidad emocional y una relación más profunda consigo mismas y con los demás.",
+    "p2": "A través de la presencia, la reflexión y la elección consciente, el cambio significativo se vuelve posible — no por la fuerza, sino a través de un movimiento interior constante.",
+    "p3": "Creo que el crecimiento ocurre cuando nos detenemos lo suficiente para escuchar hacia adentro. En terapia, te acompaño a explorar patrones, construir claridad emocional y crear diferenciación — permitiendo que el cambio emerja naturalmente, a su propio ritmo.",
+    "quote": "\"Traigo los mismos valores terapéuticos a mi vida personal — practicando la elección consciente, la presencia emocional y el equilibrio dentro de la familia y las relaciones.\"",
+    "experience": "Experiencia",
+    "timeline": [
+      { "year": "2019–2020", "role": "Trabajadora Social — Centro Psifas", "desc": "Club ocupacional de apoyo a personas con desafíos de salud mental a través de estructura diaria y pertenencia comunitaria." },
+      { "year": "2018–2019", "role": "Trabajadora Social — Shalom", "desc": "Coordinación de atención para personas sordociegas en entornos residenciales e independientes." },
+      { "year": "2017–2018", "role": "Trabajadora Social Familiar", "desc": "Departamento de Servicios Sociales, Ramat Gan." },
+      { "year": "2015–2016", "role": "Trabajadora Social — Asociación Enosh", "desc": "Trabajo individual y de pareja. Proyecto de teatro comunitario \"Subiendo al Escenario\" para personas con y sin discapacidad." },
+      { "year": "2013–2014", "role": "Trabajadora Social — Servicios de Bienestar", "desc": "Altos del Golán, incluyendo co-dirección de un grupo de psicodrama para niños." }
+    ]
+  },
+  "services": {
+    "label": "Servicios",
+    "heading": "Caminos terapéuticos personalizados",
+    "cta": "Comenzar el camino",
+    "disclaimer": "Esta práctica no ofrece descuentos. El enfoque está en el compromiso significativo y el trabajo terapéutico real.",
+    "items": [
+      {
+        "title": "Terapia individual",
+        "desc": "Un espacio de autorreflexión, consciencia emocional y crecimiento personal. Centrado en identificar patrones, fortalecer la estabilidad interior y apoyar elecciones de vida conscientes.",
+        "price": "₡55,000 CRC / hora"
+      },
+      {
+        "title": "Terapia de pareja",
+        "desc": "Apoyo a las parejas para mejorar la comunicación, la conexión emocional y la diferenciación. Creando dinámicas relacionales más saludables y estables a través de la presencia y la responsabilidad.",
+        "price": "₡70,000 CRC / hora"
+      },
+      {
+        "title": "Orientación parental",
+        "desc": "Apoyo práctico y emocional para la crianza consciente. Fortaleciendo la conexión con los hijos manteniendo límites claros y saludables.",
+        "price": "₡70,000 CRC / hora"
+      },
+      {
+        "title": "Atención colaborativa",
+        "desc": "Coordinación con otros profesionales cuando el proceso terapéutico se beneficia de un enfoque integrado y multidisciplinario para apoyar al cliente.",
+        "price": "A convenir"
+      }
+    ]
+  },
+  "methods": {
+    "label": "Enfoque terapéutico",
+    "heading": "La Flor de la Vida",
+    "intro": "Seis dimensiones interconectadas del trabajo terapéutico — cada círculo fluye hacia los demás, formando un todo.",
+    "pillars": [
+      { "title": "Procesando el pasado y el presente", "desc": "Trabajando lo que fue y lo que es, con consciencia y compasión." },
+      { "title": "Terapia centrada en soluciones", "desc": "Trabajo orientado al cambio, basado en movimiento real, no en análisis interminable." },
+      { "title": "Conexión cuerpo–mente", "desc": "Escuchar la sabiduría somática como parte de la consciencia emocional." },
+      { "title": "Enfoque sistémico", "desc": "Comprender el yo dentro del contexto de las relaciones y los sistemas." },
+      { "title": "Diferenciación", "desc": "Mantenerse conectado mientras se conserva la autonomía emocional y la responsabilidad." },
+      { "title": "El amor propio como clave", "desc": "Una relación sana con uno mismo como base de todo crecimiento." }
+    ]
+  },
+  "credentials": {
+    "label": "Credenciales",
+    "heading": "Formación profesional",
+    "supportedAreas": "Áreas de apoyo",
+    "lines": [
+      "<strong>Más de 10 años</strong> de experiencia clínica",
+      "<strong>Maestría en Trabajo Social</strong> — Universidad Hebrea (2019–2021)",
+      "<strong>Licenciatura en Trabajo Social</strong> — Tel-Hai College (2011–2014)",
+      "<strong>Formación avanzada</strong> en diferenciación, mindfulness y enfoques centrados en las emociones",
+      "<strong>Terapia de pareja y familia</strong> — Instituto Shinui (2019–2021)"
+    ],
+    "tags": ["Diferenciación", "Mindfulness", "Terapia centrada en emociones", "Orientación parental", "Terapia de pareja", "Conexión cuerpo–mente", "Enfoque sistémico"]
+  },
+  "blog": {
+    "label": "Blog",
+    "heading": "Reflexiones e ideas",
+    "intro": "Un espacio reflexivo para explorar las relaciones, la consciencia emocional y el crecimiento personal.",
+    "readMore": "Leer más",
+    "posts": [
+      {
+        "title": "El río no fuerza",
+        "excerpt": "Por qué la resistencia puede ser la información más importante que estás ignorando — y cómo trabajar con ella en lugar de contra ella."
+      },
+      {
+        "title": "La diferenciación no es distancia",
+        "excerpt": "Entender la diferencia entre crear límites saludables y desconectarse de las personas que importan."
+      },
+      {
+        "title": "Tu cuerpo lo sabe primero",
+        "excerpt": "Aprender a escuchar la sabiduría somática y lo que tu sistema nervioso intenta decirte sobre tu vida."
+      }
+    ]
+  },
+  "collaborations": {
+    "label": "Colaboraciones",
+    "heading": "Atención integrada, persona completa",
+    "intro": "El bienestar emocional y la salud física están profundamente interconectados. A través de alianzas seleccionadas con profesionales de confianza, los clientes pueden recibir apoyo integrado — terapia emocional junto con tratamiento físico — cuando sea beneficioso.",
+    "websiteLabel": "Visitar sitio web",
+    "contactLabel": "Ponerse en contacto",
+    "locationLabel": "Ubicación"
+  },
+  "booking": {
+    "label": "Reservar sesión",
+    "heading": "Agenda tu sesión",
+    "intro": "Las sesiones se ofrecen en línea, en todo el mundo. Los horarios se muestran en tu zona horaria local."
+  },
+  "contact": {
+    "label": "Contacto",
+    "heading": "Un primer paso suave",
+    "intro": "Si sientes resonancia con este enfoque, eres bienvenido/a a contactarme. El primer contacto es una oportunidad para sentir si este espacio es el adecuado para ti.",
+    "name": "Nombre completo",
+    "namePlaceholder": "Tu nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@correo.com",
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntame qué te trae aquí...",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "sent": "Mensaje enviado",
+    "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "note": "Sesiones disponibles en todo el mundo (excepto Estados Unidos y Canadá)\nEnfoque especial en israelíes en Costa Rica y Centroamérica"
+  },
+  "footer": {
+    "copy": "© 2026 Carmel Eli (MSW) · Transformación consciente, una sesión a la vez."
+  },
+  "sound": {
+    "on": "Sonido activado",
+    "off": "Sonido desactivado"
+  }
+}

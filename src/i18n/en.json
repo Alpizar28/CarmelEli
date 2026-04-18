@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "methods": "Methods",
+    "services": "Services",
+    "collaborations": "Collaborations",
+    "blog": "Blog",
+    "contact": "Contact",
+    "bookSession": "Book a Session"
+  },
+  "hero": {
+    "tagline": "Emotional Therapy · Online Worldwide",
+    "title": "Carmel Eli",
+    "subtitle": "MSW · Clinical Social Worker",
+    "quote": "A calm space for presence, responsibility,\nand meaningful inner movement",
+    "cta": "Begin the Journey",
+    "ctaLearn": "Learn More",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "About",
+    "heading": "Clinical Social Worker,\n10+ years of experience",
+    "p1": "I approach therapy as a living, ongoing practice. My work is centered on supporting people in developing awareness, emotional responsibility, and a deeper relationship with themselves and others.",
+    "p2": "Through presence, reflection, and conscious choice, meaningful change becomes possible — not by force, but through steady inner movement.",
+    "p3": "I believe that growth happens when we slow down enough to listen inward. In therapy, I accompany you in exploring patterns, building emotional clarity, and creating differentiation — allowing change to emerge naturally, at its own rhythm.",
+    "quote": "\"I bring the same therapeutic values into my personal life — practicing conscious choice, emotional presence, and balance within family and relationships.\"",
+    "experience": "Experience",
+    "timeline": [
+      { "year": "2019–2020", "role": "Social Worker — Psifas Center", "desc": "Occupational club supporting individuals with mental health challenges through daily structure and community belonging." },
+      { "year": "2018–2019", "role": "Social Worker — Shalom", "desc": "Coordinating care for deaf-blind individuals in residential and independent community settings." },
+      { "year": "2017–2018", "role": "Family Social Worker", "desc": "Social Services Department, Ramat Gan." },
+      { "year": "2015–2016", "role": "Social Worker — Enosh Association", "desc": "Individual and couples work. Community theater project \"Rising to the Stage\" for people with and without disabilities." },
+      { "year": "2013–2014", "role": "Social Worker — Welfare Services", "desc": "Golan Heights, including co-leading a psychodrama group for children." }
+    ]
+  },
+  "services": {
+    "label": "Services",
+    "heading": "Personalized therapeutic paths",
+    "cta": "Begin the Journey",
+    "disclaimer": "This practice does not offer discounts. The focus is on meaningful commitment and real therapeutic work.",
+    "items": [
+      {
+        "title": "Individual Therapy",
+        "desc": "A space for self-reflection, emotional awareness, and personal growth. Focused on identifying patterns, strengthening inner stability, and supporting conscious life choices.",
+        "price": "₡55,000 CRC / hour"
+      },
+      {
+        "title": "Couples Therapy",
+        "desc": "Supporting couples in improving communication, emotional connection, and differentiation. Creating healthier, more stable relational dynamics through presence and responsibility.",
+        "price": "₡70,000 CRC / hour"
+      },
+      {
+        "title": "Parental Guidance",
+        "desc": "Practical and emotional support for conscious parenting. Strengthening connection with children while maintaining clear and healthy boundaries.",
+        "price": "₡70,000 CRC / hour"
+      },
+      {
+        "title": "Collaborative Care",
+        "desc": "Coordination with other professionals when the therapeutic process benefits from an integrated, multidisciplinary approach to support the client.",
+        "price": "By arrangement"
+      }
+    ]
+  },
+  "methods": {
+    "label": "Therapeutic Approach",
+    "heading": "The Flower of Life",
+    "intro": "Six interconnected dimensions of the therapeutic work — each circle flows into the others, forming a whole.",
+    "pillars": [
+      { "title": "Processing Past & Present", "desc": "Working through what was and what is, with awareness and compassion." },
+      { "title": "Solution-Focused Therapy", "desc": "Change-oriented work grounded in real movement, not endless analysis." },
+      { "title": "Body–Mind Connection", "desc": "Listening to somatic wisdom as part of emotional awareness." },
+      { "title": "Systemic Approach", "desc": "Understanding the self within the context of relationships and systems." },
+      { "title": "Differentiation", "desc": "Staying connected while maintaining emotional autonomy and responsibility." },
+      { "title": "Self-Love as a Key", "desc": "A healthy relationship with oneself as the foundation for all growth." }
+    ]
+  },
+  "credentials": {
+    "label": "Credentials",
+    "heading": "Professional background",
+    "supportedAreas": "Supported areas",
+    "lines": [
+      "<strong>10+ years</strong> of clinical experience",
+      "<strong>Master's Degree in Social Work</strong> — Hebrew University (2019–2021)",
+      "<strong>Bachelor's Degree in Social Work</strong> — Tel-Hai College (2011–2014)",
+      "<strong>Advanced training</strong> in differentiation, mindfulness, and emotion-focused approaches",
+      "<strong>Couples & family therapy</strong> — Shinui Institute (2019–2021)"
+    ],
+    "tags": ["Differentiation", "Mindfulness", "Emotion-Focused Therapy", "Parent Coaching", "Couples Therapy", "Body–Mind Connection", "Systemic Approach"]
+  },
+  "blog": {
+    "label": "Blog",
+    "heading": "Reflections and insights",
+    "intro": "A reflective space for exploring relationships, emotional awareness, and personal growth.",
+    "readMore": "Read More",
+    "posts": [
+      {
+        "title": "The River Doesn't Force",
+        "excerpt": "Why resistance might be the most important information you're ignoring — and how to work with it instead of against it."
+      },
+      {
+        "title": "Differentiation Is Not Distance",
+        "excerpt": "Understanding the difference between creating healthy boundaries and disconnecting from the people who matter."
+      },
+      {
+        "title": "Your Body Knows First",
+        "excerpt": "Learning to listen to somatic wisdom and what your nervous system is trying to tell you about your life."
+      }
+    ]
+  },
+  "collaborations": {
+    "label": "Collaborations",
+    "heading": "Integrated care, whole person",
+    "intro": "Emotional wellbeing and physical health are deeply interconnected. Through selected partnerships with trusted practitioners, clients can receive integrated support — emotional therapy alongside physical treatment — when beneficial.",
+    "websiteLabel": "Visit website",
+    "contactLabel": "Get in touch",
+    "locationLabel": "Location"
+  },
+  "booking": {
+    "label": "Book a Session",
+    "heading": "Schedule your session",
+    "intro": "Sessions are offered online, worldwide. Times are shown in your local timezone."
+  },
+  "contact": {
+    "label": "Contact",
+    "heading": "A gentle first step",
+    "intro": "If you feel resonance with this approach, you are welcome to reach out. The first contact is an opportunity to sense whether this space feels right for you.",
+    "name": "Full Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell me what brings you here...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "sent": "Message Sent",
+    "error": "Something went wrong. Please try again.",
+    "note": "Sessions offered worldwide (excluding United States and Canada)\nSpecial focus on Israelis in Costa Rica and Central America"
+  },
+  "footer": {
+    "copy": "© 2026 Carmel Eli (MSW) · Conscious transformation, one session at a time."
+  },
+  "sound": {
+    "on": "Sound on",
+    "off": "Sound off"
+  }
+}

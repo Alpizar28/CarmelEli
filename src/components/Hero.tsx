@@ -1,11 +1,40 @@
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { stagger, fadeInUp } from '../lib/animations'
+import { useAmbientSound } from '../hooks/useAmbientSound'
 
-export default function Hero() {
+interface HeroProps {
+  onSoundChange: (playing: boolean, toggle: () => void) => void
+}
+
+export default function Hero({ onSoundChange }: HeroProps) {
+  const { t } = useTranslation()
+  const baseUrl = import.meta.env.BASE_URL
+  const { playing, toggle } = useAmbientSound(`${baseUrl}river-ambient.mp3`)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  // Expose playing state + toggle to parent (App → Nav)
+  useEffect(() => {
+    onSoundChange(playing, toggle)
+  }, [playing, toggle, onSoundChange])
+
+  // Auto-pause when hero scrolls out of view
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (!entry.isIntersecting && playing) toggle() },
+      { threshold: 0.1 }
+    )
+    observer.observe(section)
+    return () => observer.disconnect()
+  }, [playing, toggle])
+
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section ref={sectionRef} id="home" className="relative h-screen flex items-end overflow-hidden">
 
-      {/* Video background */}
+      {/* Video background — full bleed, unobstructed */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
         autoPlay
@@ -14,13 +43,21 @@ export default function Hero() {
         playsInline
         preload="auto"
       >
-        <source src="/river.mp4" type="video/mp4" />
+        <source media="(max-width: 768px)" src={`${baseUrl}river-mobile.mp4`} type="video/mp4" />
+        <source src={`${baseUrl}river.mp4`} type="video/mp4" />
       </video>
 
+      {/* Vignette — stronger on mobile for legibility */}
+      <div
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to top, rgba(20,40,34,0.92) 0%, rgba(20,40,34,0.55) 40%, rgba(20,40,34,0.15) 65%, transparent 80%)',
+        }}
+      />
 
       {/* Japanese ink brush SVG decoration */}
       <svg
-        className="absolute inset-0 w-full h-full z-10 opacity-[0.06] pointer-events-none"
+        className="absolute inset-0 w-full h-full z-10 opacity-[0.05] pointer-events-none"
         viewBox="0 0 1400 900"
         preserveAspectRatio="xMidYMid slice"
         aria-hidden="true"
@@ -29,87 +66,69 @@ export default function Hero() {
         <path d="M95,100 Q90,300 93,500" stroke="#2F5D50" strokeWidth="1.5" fill="none" strokeLinecap="round" />
         <path d="M1200,300 Q1250,320 1300,310 Q1360,330 1400,315" stroke="#2F5D50" strokeWidth="2" fill="none" strokeLinecap="round" />
         <path d="M1180,360 Q1240,375 1320,365 Q1370,380 1400,370" stroke="#2F5D50" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-        <path d="M1220,420 Q1270,435 1340,425" stroke="#2F5D50" strokeWidth="1" fill="none" strokeLinecap="round" />
-        <circle cx="700" cy="450" r="280" stroke="#8FAEA3" strokeWidth="0.5" fill="none" strokeDasharray="4 8" opacity="0.4" />
-        <circle cx="150" cy="600" r="2" fill="#8FAEA3" />
-        <circle cx="160" cy="620" r="1.5" fill="#8FAEA3" />
-        <circle cx="140" cy="615" r="1" fill="#F6D982" />
-        <circle cx="1280" cy="200" r="2" fill="#8FAEA3" />
-        <circle cx="1295" cy="218" r="1.5" fill="#8FAEA3" />
-        <circle cx="1270" cy="212" r="1" fill="#F6D982" />
+        <circle cx="700" cy="450" r="280" stroke="#8FAEA3" strokeWidth="0.5" fill="none" strokeDasharray="4 8" opacity="0.3" />
       </svg>
 
       {/* Hero content */}
       <motion.div
-        className="relative z-20 text-center max-w-2xl px-12 py-14"
-        style={{ background: 'rgba(242,244,243,0.65)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}
+        className="relative z-20 w-full px-6 md:px-14 pb-16 md:pb-24 max-w-3xl text-center md:text-left mx-auto md:mx-0"
         variants={stagger}
         initial="hidden"
         animate="visible"
       >
-        <motion.p
-          variants={fadeInUp}
-          className="text-[11px] tracking-[4px] uppercase text-primary/70 mb-6"
-          style={{ textShadow: '0 1px 10px rgba(242,244,243,1)' }}
-        >
-          Emotional Therapy · Online Worldwide
-        </motion.p>
-
         <motion.h1
           variants={fadeInUp}
-          className="font-display font-light tracking-[4px] text-primary leading-none mb-2"
-          style={{ fontSize: 'clamp(52px, 7vw, 80px)', textShadow: '0 2px 20px rgba(242,244,243,0.9)' }}
+          className="font-display font-light tracking-[3px] md:tracking-[4px] text-white leading-none mb-2"
+          style={{ fontSize: 'clamp(42px, 10vw, 88px)' }}
         >
-          Carmel Eli
+          {t('hero.title')}
         </motion.h1>
 
         <motion.p
           variants={fadeInUp}
-          className="text-[13px] tracking-[3px] uppercase text-primary/70 mb-8"
-          style={{ textShadow: '0 1px 10px rgba(242,244,243,1)' }}
+          className="text-[11px] md:text-[13px] tracking-[3px] uppercase text-white/60 mb-6"
         >
-          MSW · Clinical Social Worker
+          {t('hero.subtitle')}
         </motion.p>
 
         {/* Gold brush divider */}
         <motion.div
           variants={fadeInUp}
-          className="w-20 h-px mx-auto mb-7"
-          style={{ background: 'linear-gradient(90deg, transparent, #F6D982 30%, #F6D982 70%, transparent)' }}
+          className="w-12 md:w-16 h-px mb-6 mx-auto md:mx-0"
+          style={{ background: 'linear-gradient(90deg, #F6D982 0%, #F6D982 60%, transparent)' }}
         />
 
         <motion.p
           variants={fadeInUp}
-          className="font-display italic font-light text-ink/80 mb-10 leading-relaxed"
-          style={{ fontSize: 'clamp(16px, 2vw, 20px)', textShadow: '0 1px 12px rgba(242,244,243,0.9)' }}
+          className="font-display italic font-light text-white/80 mb-8 leading-relaxed"
+          style={{ fontSize: 'clamp(14px, 4vw, 19px)', whiteSpace: 'pre-line' }}
         >
-          A calm space for presence, responsibility,<br />and meaningful inner movement
+          {t('hero.quote')}
         </motion.p>
 
-        <motion.div variants={fadeInUp} className="flex gap-4 justify-center flex-wrap">
+        <motion.div variants={fadeInUp} className="flex gap-3 flex-wrap justify-center md:justify-start">
           <a
             href="#contact"
-            className="bg-primary text-white text-[11px] uppercase tracking-[2px] px-8 py-3.5 hover:bg-primary/90 transition-colors no-underline"
+            className="bg-white/10 border border-white/30 text-white text-[10px] md:text-[11px] uppercase tracking-[2px] px-6 md:px-8 py-3 md:py-3.5 hover:bg-white/20 transition-colors no-underline backdrop-blur-sm"
           >
-            Begin the Journey
+            {t('hero.cta')}
           </a>
           <a
             href="#about"
-            className="border border-primary text-primary text-[11px] uppercase tracking-[2px] px-8 py-3.5 hover:bg-primary/5 transition-colors no-underline"
-            style={{ background: 'rgba(242,244,243,0.3)' }}
+            className="text-white/70 text-[10px] md:text-[11px] uppercase tracking-[2px] px-6 md:px-8 py-3 md:py-3.5 hover:text-white transition-colors no-underline border border-white/15 hover:border-white/30"
           >
-            Learn More
+            {t('hero.ctaLearn')}
           </a>
         </motion.div>
       </motion.div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2.5 text-ink/40">
-        <span className="text-[9px] tracking-[3px] uppercase" style={{ textShadow: '0 1px 6px rgba(242,244,243,0.8)' }}>Scroll</span>
+      {/* Scroll hint — hidden on mobile */}
+      <div className="hidden md:flex absolute bottom-10 right-14 z-20 flex-col items-center gap-2.5 text-white/35">
         <div
           className="w-px h-12"
-          style={{ background: 'linear-gradient(180deg, #8FAEA3, transparent)', animation: 'pulse 2s ease-in-out infinite' }}
+          style={{ background: 'linear-gradient(180deg, transparent, rgba(255,255,255,0.4))', animation: 'pulse 2s ease-in-out infinite' }}
         />
+        <span className="text-[9px] tracking-[3px] uppercase">{t('hero.scroll')}</span>
       </div>
     </section>
   )
