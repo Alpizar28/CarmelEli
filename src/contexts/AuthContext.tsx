@@ -16,6 +16,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    if (!auth) {
+      setLoading(false)
+      return
+    }
     const unsub = onAuthStateChanged(auth, u => {
       setUser(u)
       setLoading(false)
@@ -24,10 +28,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [])
 
   async function login(email: string, password: string) {
+    if (!auth) throw new Error('Firebase auth is not configured')
     await signInWithEmailAndPassword(auth, email, password)
   }
 
   async function logout() {
+    if (!auth) return
     await signOut(auth)
   }
 

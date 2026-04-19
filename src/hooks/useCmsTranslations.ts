@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { subscribeSiteContentByLang } from '../lib/cms'
+import en from '../i18n/en.json'
+import es from '../i18n/es.json'
+import he from '../i18n/he.json'
 
 type Lang = 'en' | 'es' | 'he'
 
@@ -25,6 +28,17 @@ const KEY_PATH_MAP: Record<string, string> = {
   footer__copy: 'footer.copy',
 }
 
+const BASE_TRANSLATIONS = { en, es, he }
+const mergedCache: Record<Lang, Record<string, unknown>> = {
+  en: cloneBaseStatic('en'),
+  es: cloneBaseStatic('es'),
+  he: cloneBaseStatic('he'),
+}
+
+function cloneBaseStatic(lang: Lang): Record<string, unknown> {
+  return JSON.parse(JSON.stringify(BASE_TRANSLATIONS[lang])) as Record<string, unknown>
+}
+
 function normalizeLang(raw: string): Lang {
   if (raw.startsWith('es')) return 'es'
   if (raw.startsWith('he')) return 'he'
@@ -45,22 +59,43 @@ function setByPath(target: Record<string, unknown>, path: string, value: string)
   current[parts[parts.length - 1]] = value
 }
 
+function cloneBase(lang: Lang): Record<string, unknown> {
+  return cloneBaseStatic(lang)
+}
+
 export function useCmsTranslations() {
   const { i18n } = useTranslation()
 
   useEffect(() => {
+    const hasFirebaseConfig =
+      Boolean(import.meta.env.VITE_FIREBASE_API_KEY) &&
+      Boolean(import.meta.env.VITE_FIREBASE_PROJECT_ID) &&
+      Boolean(import.meta.env.VITE_FIREBASE_APP_ID)
+
+    if (!hasFirebaseConfig) {
+      return
+    }
+
     const lang = normalizeLang(i18n.language ?? 'en')
 
-    const unsubscribe = subscribeSiteContentByLang(lang, content => {
-      const overrides: Record<string, unknown> = {}
-      for (const [key, value] of Object.entries(content)) {
-        const path = KEY_PATH_MAP[key]
-        if (!path) continue
-        setByPath(overrides, path, value)
-      }
-      i18n.addResourceBundle(lang, 'translation', overrides, true, true)
-    })
+    i18n.addResourceBundle(lang, 'translation', mergedCache[lang], true, true)
 
-    return unsubscribe
+    try {
+      const unsubscribe = subscribeSiteContentByLang(lang, content => {
+        const merged = cloneBase(lang)
+        for (const [key, value] of Object.entries(content)) {
+          const path = KEY_PATH_MAP[key]
+          if (!path) continue
+          if (!value.trim()) continue
+          setByPath(merged, path, value)
+        }
+        mergedCache[lang] = merged
+        i18n.addResourceBundle(lang, 'translation', merged, true, true)
+      })
+
+      return unsubscribe
+    } catch {
+      return
+    }
   }, [i18n, i18n.language])
 }

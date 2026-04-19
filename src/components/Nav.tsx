@@ -49,8 +49,8 @@ export default function Nav({ soundPlaying, onSoundToggle }: NavProps) {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-14 py-5 transition-all duration-300 ${
         scrolled
-          ? 'bg-bg/90 backdrop-blur-xl border-b border-primary/10 shadow-sm'
-          : 'bg-bg/70 backdrop-blur-md border-b border-primary/5'
+          ? 'bg-[rgba(255,255,255,0.86)] backdrop-blur-xl border-b border-primary/10 shadow-sm'
+          : 'bg-[rgba(255,255,255,0.64)] backdrop-blur-md border-b border-primary/5'
       }`}
     >
       <a href="#home" className="text-primary uppercase tracking-[3px] text-sm font-medium">
@@ -63,7 +63,7 @@ export default function Nav({ soundPlaying, onSoundToggle }: NavProps) {
           <li key={l.href}>
             <a
               href={l.href}
-              className="text-[11px] uppercase tracking-[2px] text-ink/50 hover:text-primary transition-colors duration-200 no-underline"
+              className="text-[11px] uppercase tracking-[2px] text-ink/90 hover:text-primary transition-colors duration-200 no-underline"
             >
               {l.label}
             </a>
@@ -82,7 +82,7 @@ export default function Nav({ soundPlaying, onSoundToggle }: NavProps) {
               className={`text-[10px] tracking-[2px] uppercase transition-colors bg-transparent border-0 cursor-pointer px-1 py-0.5 ${
                 currentLang === code
                   ? 'text-primary border-b border-primary'
-                  : 'text-ink/35 hover:text-primary'
+                  : 'text-ink/90 hover:text-primary'
               }`}
             >
               {label}
@@ -95,7 +95,7 @@ export default function Nav({ soundPlaying, onSoundToggle }: NavProps) {
           onClick={onSoundToggle}
           aria-label={soundPlaying ? t('sound.off') : t('sound.on')}
           title={soundPlaying ? t('sound.off') : t('sound.on')}
-          className="text-ink/35 hover:text-primary transition-colors bg-transparent border-0 cursor-pointer p-1"
+          className="text-ink/90 hover:text-primary transition-colors bg-transparent border-0 cursor-pointer p-1"
         >
           {soundPlaying ? (
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">

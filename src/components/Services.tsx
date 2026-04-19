@@ -47,13 +47,6 @@ export default function Services() {
             </motion.div>
           ))}
         </motion.div>
-
-        <motion.p
-          variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-          className="text-[13px] text-ink/40 text-center mt-10 tracking-wide"
-        >
-          {t('services.disclaimer')}
-        </motion.p>
       </div>
     </section>
   )

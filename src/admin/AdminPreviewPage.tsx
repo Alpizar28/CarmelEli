@@ -101,6 +101,7 @@ function buildMergedTranslation(
   for (const [contentKey, value] of Object.entries(draft)) {
     const i18nPath = CONTENT_TO_I18N_KEY[contentKey]
     if (!i18nPath) continue
+    if (!value.trim()) continue
     setByPath(merged, i18nPath, value)
   }
   return merged

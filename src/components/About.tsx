@@ -69,6 +69,21 @@ export default function About() {
               </motion.div>
             ))}
           </motion.div>
+
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            className="mt-8 flex justify-center"
+          >
+            <img
+              src="/foto-carmel.jpeg"
+              alt="Carmel Eli"
+              className="w-48 h-48 md:w-56 md:h-56 object-cover rounded-full border border-primary/15 shadow-sm"
+              loading="lazy"
+            />
+          </motion.div>
         </div>
       </div>
     </section>
