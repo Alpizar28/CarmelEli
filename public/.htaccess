@@ -1,3 +1,9 @@
+Options -MultiViews
+DirectoryIndex index.html
+
+# SPA fallback for hosts that don't apply rewrite consistently.
+ErrorDocument 404 /index.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -6,7 +12,7 @@
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  RewriteRule ^ index.html [L]
+  RewriteRule . /index.html [L]
 </IfModule>
 
 <IfModule mod_expires.c>
