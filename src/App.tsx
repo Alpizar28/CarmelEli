@@ -9,8 +9,11 @@ import Credentials from './components/Credentials'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import { useCmsTranslations } from './hooks/useCmsTranslations'
 
 export default function App() {
+  useCmsTranslations()
+
   const [soundPlaying, setSoundPlaying] = useState(false)
   const [soundToggle, setSoundToggle] = useState<() => void>(() => () => {})
 

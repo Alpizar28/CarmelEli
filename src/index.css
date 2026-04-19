@@ -11,3 +11,9 @@
   0%, 100% { opacity: 0.3; }
   50%       { opacity: 1; }
 }
+
+.admin-preview-highlight {
+  outline: 3px solid rgba(246, 217, 130, 0.75);
+  outline-offset: 6px;
+  transition: outline-color 220ms ease;
+}
